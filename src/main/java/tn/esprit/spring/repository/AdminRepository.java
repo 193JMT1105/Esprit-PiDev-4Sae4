@@ -7,3 +7,4 @@ import tn.esprit.spring.entity.Admin;
 public interface AdminRepository extends CrudRepository<Admin, Long> {
 
 }
+ 
