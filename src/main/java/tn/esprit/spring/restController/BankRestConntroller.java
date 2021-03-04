@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Bank;
-import tn.esprit.spring.entity.User;
 import tn.esprit.spring.service.Bank_Service;
 
 @RestController
