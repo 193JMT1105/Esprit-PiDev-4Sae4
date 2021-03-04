@@ -45,7 +45,7 @@ public void retrieveBankById(@PathParam("id") Long id)
 	bankser.retrieveBankById(id);
 }
 @DeleteMapping("/deleteBank")
-public void deleteUser(@RequestBody Bank b)
+public void deleteBank(@RequestBody Bank b)
 {
 	bankser.deleteBank(b);  
 }
