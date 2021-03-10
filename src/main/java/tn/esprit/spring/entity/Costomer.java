@@ -1,11 +1,15 @@
 package tn.esprit.spring.entity;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "T_Costomer")
@@ -18,6 +22,12 @@ public class Costomer{
 	private String loginCostomer ;
 	@Column(name = "Costomer_pwd")
 	private String pwdCostomer ;
+	
+	
+	@OneToMany(mappedBy="Costomer")
+	private Collection<Appointment> appointments;
+	
+	
 	public Costomer() {
 		super();
 		// TODO Auto-generated constructor stub

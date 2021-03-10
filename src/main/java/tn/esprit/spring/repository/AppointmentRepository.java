@@ -1,0 +1,13 @@
+package tn.esprit.spring.repository;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import tn.esprit.spring.entity.Appointment;
+import tn.esprit.spring.entity.AppointmentFeedback;
+
+@Repository
+public interface AppointmentRepository extends CrudRepository<Appointment, Long> {
+
+
+}
