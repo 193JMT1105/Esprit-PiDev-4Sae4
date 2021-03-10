@@ -14,37 +14,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "User_id")
 	private Long id ;
-	@Column(name = "User_Name")
-	private String name ;
+	@Column(name = "User_First_Name")
+	private String firstName ;
+	@Column(name = "User_Last_Name")
+	private String lastName ;
 	@Column(name = "User_Email")
 	private String email;
-	public User(Long id, String name, String email) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	@Column(name = "Login")
+	private String login;
+	@Column(name = "Password")
+	private String password;
 
 }
