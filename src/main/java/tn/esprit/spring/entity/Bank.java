@@ -1,10 +1,13 @@
 package tn.esprit.spring.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,10 @@ public class Bank {
 private Long idBank ;
 @Column(name = "Bank_Name")
 private String nameBank ;
+@OneToMany
+private List<Agent> agent;
+
+
 public Bank() {
 	super();
 	// TODO Auto-generated constructor stub

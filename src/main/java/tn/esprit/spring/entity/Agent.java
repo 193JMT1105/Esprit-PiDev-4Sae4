@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +15,8 @@ public class Agent extends User{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Agent_id")
 	private Long id ;
-	
+	@ManyToOne
+	private Bank bnck;
 	
 	public Agent() {
 		super();

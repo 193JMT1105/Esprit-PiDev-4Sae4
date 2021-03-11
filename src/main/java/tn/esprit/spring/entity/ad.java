@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import javassist.SerialVersionUID;
 
@@ -37,7 +38,8 @@ public class ad implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private AdType type;
 	
-	
+	@ManyToOne
+	private Costomer costomer;
 	public int getAdID() {
 		return AdID;
 	}

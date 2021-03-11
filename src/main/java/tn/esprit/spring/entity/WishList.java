@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,5 +17,7 @@ public class WishList {
 	private Long listId;
 	@Column(name = "ad_Id")
 	private Long adId;
+	@ManyToOne
+	private Costomer costomer;
 
 }
