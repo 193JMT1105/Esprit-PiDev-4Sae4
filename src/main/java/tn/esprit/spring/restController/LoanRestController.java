@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import tn.esprit.spring.entity.Bank;
@@ -20,17 +22,17 @@ import tn.esprit.spring.service.Loan_Service;
 
 
 @RestController
-@RequestMapping("/Loan")
+
 public class LoanRestController {
 	
 	
 	@Autowired
 	Loan_Service loanserv;
 
-	@PostMapping("/addloan")
-	public void addLoan(@RequestBody  Loan l)
+	@RequestMapping(value = "/addloan", method= RequestMethod.POST, consumes = "application/json" )
+	public Loan addLoan(@RequestBody  Loan l)
 	{
-		loanserv.addLoan(l);	
+		return loanserv.addLoan(l);	
 	}
 	
 	@PutMapping("/updateLoan")
@@ -44,6 +46,7 @@ public class LoanRestController {
 	{
 		loanserv.deleteLoan(l);  
 	}
+	
 
 	
 	

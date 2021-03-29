@@ -9,19 +9,19 @@ public class Appointment_Service_Impl implements Appointment_Service {
 	AppointmentRepository appRep;
 
 	@Override
-	public void addAppointment(Appointment Appointment) {
-		appRep.save(Appointment);
+	public void addAppointment(Appointment appointment) {
+		appRep.save(appointment);
 	}
 
 	@Override
-	public void updateAppointment(Appointment Appointment) {
-		appRep.save(Appointment);
+	public void updateAppointment(Appointment appointment) {
+		appRep.save(appointment);
 		
 	}
 
 	@Override
-	public void deleteAppointment(Appointment Appointment) {
-		appRep.delete(Appointment);
+	public void deleteAppointment(Appointment appointment) {
+		appRep.delete(appointment);
 		
 	}
 	

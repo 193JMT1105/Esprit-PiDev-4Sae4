@@ -3,14 +3,28 @@ package tn.esprit.spring.entity;
 import java.util.Collection;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(length = 3)
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME,include = JsonTypeInfo.As.PROPERTY,property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(name = "STB",value = STB.class),
+        @JsonSubTypes.Type(name = "BH",value = BH.class)
+})
+
 @Table(name = "T_Bank")
 public class Bank {
 @Id
@@ -22,10 +36,6 @@ private String nameBank ;
 
 @OneToMany (mappedBy="bank")
 private Collection<Agent> agent;
-
-
-
-
 
 
 public Bank() {

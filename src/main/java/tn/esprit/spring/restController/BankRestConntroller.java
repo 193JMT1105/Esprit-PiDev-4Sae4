@@ -28,13 +28,13 @@ public void addBank(@RequestBody  Bank b)
 	bankser.addBank(b);	
 }
 @GetMapping("/retrieveAllBanks")
-public List<Bank> retrieveAllUsers()
+public List<Bank> retrieveAllBanks()
 {
 	return bankser.retrieveAllBanks();
 }
 
 @PutMapping("/updateBank")
-public void updateUser(@RequestBody  Bank b)
+public void updateBank(@RequestBody  Bank b)
 {
 	bankser.updateBank(b);
 }
