@@ -46,4 +46,11 @@ public class Costomer_Service implements Costomer_Service_Impl{
 		
 	}
 
+	@Override
+	public void deleteCostomerById(Long id) {
+		// TODO Auto-generated method stub
+		costRepo.deleteById(id);
+		
+	}
+
 }

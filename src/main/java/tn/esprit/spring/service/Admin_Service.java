@@ -31,7 +31,7 @@ public class Admin_Service implements Admin_Service_Impl {
 	}
 
 	@Override
-	public List<Admin> retrieveAllUsers() {
+	public List<Admin> retrieveAlladmin() {
 		// TODO Auto-generated method stub
 		return(List<Admin>) adminRep.findAll();
 	}

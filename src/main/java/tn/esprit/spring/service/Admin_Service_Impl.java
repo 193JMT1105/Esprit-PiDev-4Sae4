@@ -9,7 +9,7 @@ public interface Admin_Service_Impl {
 	void addAdmin(Admin ad);
 	void updateAdmin(Admin ad);
 	Admin retrieveAdminById(Long idAdmin);
-	List <Admin> retrieveAllUsers();
+	List <Admin> retrieveAlladmin();
 	void deleteAdmin(Admin ad);
 
 }

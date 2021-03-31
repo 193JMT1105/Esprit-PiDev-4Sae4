@@ -10,5 +10,6 @@ public interface Costomer_Service_Impl {
 	Costomer retrieveCostomerById(Long idCostomer);
 	List <Costomer> retrieveAllCostomers();
 	void deleteCostomer(Costomer c);
+	void deleteCostomerById(Long id);
 	
 }

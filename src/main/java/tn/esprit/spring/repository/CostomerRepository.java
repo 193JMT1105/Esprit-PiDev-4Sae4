@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.spring.entity.Costomer;
 @Repository
 public interface CostomerRepository extends CrudRepository<Costomer, Long> {
-
+	Costomer findById(long id);
 }
