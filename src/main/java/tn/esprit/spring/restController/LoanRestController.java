@@ -30,7 +30,7 @@ public class LoanRestController {
 	Loan_Service loanserv;
 
 	@RequestMapping(value = "/addloan", method= RequestMethod.POST, consumes = "application/json" )
-	public Loan addLoan(@RequestBody  Loan l)
+	public Loan addLoan(@RequestBody  Loan l )
 	{
 		return loanserv.addLoan(l);	
 	}

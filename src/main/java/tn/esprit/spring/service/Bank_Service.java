@@ -26,8 +26,7 @@ public class Bank_Service implements Bank_Service_Impl {
 		bankrep.save(ban);
 	}
 
-	@Override
-	public Bank retrieveBankById(Long idBank) {
+	public Bank getBankById(Long idBank) {
 		// TODO Auto-generated method stub
 		return bankrep.findById(idBank).get();
 	}
@@ -43,5 +42,18 @@ public class Bank_Service implements Bank_Service_Impl {
 		// TODO Auto-generated method stub
 		bankrep.delete(ban);
 	}
+
+	@Override
+	public Bank retrieveBankById(Long idBank) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Bank getBankByidBank(Long idBank) {
+		return bankrep.findById(idBank).get();
+	}
+	
+	
 
 }

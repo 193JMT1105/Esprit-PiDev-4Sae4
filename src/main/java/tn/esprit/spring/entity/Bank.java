@@ -25,11 +25,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(name = "BH",value = BH.class)
 })
 
-@Table(name = "T_Bank")
+
 public class Bank {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "Bank_id")
 private Long idBank ;
 @Column(name = "Bank_Name")
 private String nameBank ;

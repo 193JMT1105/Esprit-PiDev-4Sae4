@@ -11,6 +11,17 @@ import javax.persistence.Table;
 @Table(name="STB")
 
 public class STB extends Bank {
+
+	public STB() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public STB(Long idBank, String nameBank) {
+		super(idBank, nameBank);
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 

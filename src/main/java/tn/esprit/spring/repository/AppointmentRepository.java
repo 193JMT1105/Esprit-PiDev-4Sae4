@@ -8,6 +8,6 @@ import tn.esprit.spring.entity.AppointmentFeedback;
 
 @Repository
 public interface AppointmentRepository extends CrudRepository<Appointment, Long> {
-
+	public Appointment getAppointmentByIdAppointment(Long idAppointment);
 
 }

@@ -8,11 +8,14 @@ public interface Loan_Service {
 	void updateLoan(Loan Loan);
 	Loan retrieveLoantById(Long idLoan);
 	void deleteLoan(Loan Loan);
+	//Loan getLoanById(Long idLoan);
 	double calculTotalInterets(Loan loan);
 	double calculCommision(Loan loan);
 	double calculTva(Loan loan);
 	double calculFraisValidation(Loan loan);
 	double calculAssurance(Loan loan);
+	
+	
 
 
 

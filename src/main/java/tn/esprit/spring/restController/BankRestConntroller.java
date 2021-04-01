@@ -11,18 +11,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import tn.esprit.spring.entity.Bank;
 import tn.esprit.spring.service.Bank_Service;
 
 @RestController
-@RequestMapping("/bank")
 public class BankRestConntroller {
 @Autowired
 Bank_Service bankser;
 
-@PostMapping("/addbank")
+@RequestMapping(value= "/addbank", method = RequestMethod.POST, consumes = "application/json")
 public void addBank(@RequestBody  Bank b)
 {
 	bankser.addBank(b);	

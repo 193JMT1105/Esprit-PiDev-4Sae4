@@ -3,19 +3,25 @@ package tn.esprit.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import tn.esprit.spring.entity.BH;
+import tn.esprit.spring.entity.Bank;
 import tn.esprit.spring.entity.Loan;
+import tn.esprit.spring.entity.STB;
 import tn.esprit.spring.entity.Taux;
+import tn.esprit.spring.repository.BankRepository;
 import tn.esprit.spring.repository.LoanRepository;
 
 @Service
 public class Loan_Service_Impl implements Loan_Service {
 	@Autowired
 	LoanRepository loanrep;
-
+	@Autowired
+	BankRepository bankRepo;
 	@Override
 	public Loan addLoan(Loan l) {
-		System.out.println(l);
-
+		//Bank bank=bankRepo.getBankByidBank(idBank);
+		//System.out.println(bank);
+		//if (bank instanceof STB ) {
 		l.setTotalInterets(this.calculTotalInterets(l));
 		l.setCommision(this.calculCommision(l));
 		l.setTVA(this.calculTva(l)); 
@@ -24,8 +30,14 @@ public class Loan_Service_Impl implements Loan_Service {
 		l.setTotalPayment(l.getLoanVlaue()+l.getAssurance()+l.getCommision()
 			+l.getFrais()+l.getTotalInterets()+l.getTVA());
 		l.setTotalPayementParMois(l.getTotalPayment()/l.getDuree());
-		System.out.println(l);
+		
+		
 		return loanrep.save(l);
+			
+		
+		
+
+		
 	}
 
 	@Override
@@ -79,6 +91,8 @@ public class Loan_Service_Impl implements Loan_Service {
 		double itr=(double) Math.round(interet*100)/100;
 		return itr;
 	}
+
+
 
 
 	

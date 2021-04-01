@@ -11,5 +11,6 @@ public interface Bank_Service_Impl {
 	Bank retrieveBankById(Long idBank);
 	List <Bank> retrieveAllBanks();
 	void deleteBank(Bank ban);
+	Bank getBankByidBank(Long idBank);
 
 }

@@ -18,6 +18,8 @@ public class Appointment implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idAppointment;
 	private Date dateAppointment;
+	private String status;
+	
 	
 	@OneToOne
 	AppointmentFeedback appointmentFeedback;
@@ -25,6 +27,46 @@ public class Appointment implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="Costomer")
 	private Costomer Costomer;
+
+	public Appointment(Long idAppointment, Date dateAppointment, String status,
+			tn.esprit.spring.entity.Costomer costomer) {
+		super();
+		this.idAppointment = idAppointment;
+		this.dateAppointment = dateAppointment;
+		this.status = status;
+		Costomer = costomer;
+	}
+
+	public Appointment() {
+		super();
+	}
+
+	public Long getIdAppointment() {
+		return idAppointment;
+	}
+
+	public void setIdAppointment(Long idAppointment) {
+		this.idAppointment = idAppointment;
+	}
+
+	public Date getDateAppointment() {
+		return dateAppointment;
+	}
+
+	public void setDateAppointment(Date dateAppointment) {
+		this.dateAppointment = dateAppointment;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	
+	
 	
 	
 	
