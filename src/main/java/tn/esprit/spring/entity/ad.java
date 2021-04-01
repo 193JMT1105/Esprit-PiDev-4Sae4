@@ -12,8 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import javassist.SerialVersionUID;
 
+import javassist.SerialVersionUID;
 @Entity
 
 public class ad implements Serializable{
@@ -29,14 +29,13 @@ public class ad implements Serializable{
 	private int nbBath;
 	private int terrace;
 	private String description;
-	private String image;
-	private String vd;
 	private boolean pool;
 	private boolean elevator;
 	private int airConditioner;
     private boolean furnished;
 	private boolean parcking;
 	private Date date;
+	private String image;
 	@Enumerated(EnumType.STRING)
 	private AdType type;
 	@Enumerated(EnumType.STRING)
@@ -63,25 +62,7 @@ public class ad implements Serializable{
 
 
 
-	public String getImage() {
-		return image;
-	}
-
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-
-	public String getVd() {
-		return vd;
-	}
-
-
-	public void setVd(String vd) {
-		this.vd = vd;
-	}
-
+	
 
 	public double getPrice() {
 		return price;
@@ -141,6 +122,16 @@ public class ad implements Serializable{
 		this.terrace = terrace;
 	}
 
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 
 	public String getDescription() {
@@ -246,11 +237,16 @@ public class ad implements Serializable{
 
 
 
-	public ad(double price, String location, int nbRoom, int nbBath, int terrace, String description, boolean pool,
-			boolean elevator, int airConditioner, boolean furnished, boolean parcking, AdState state, Date date,
-			AdType type) {
+	
+
+
+	public ad(int adID, double price, double surface, String location, int nbRoom, int nbBath, int terrace,
+			String description, boolean pool, boolean elevator, int airConditioner, boolean furnished, boolean parcking,
+			Date date, AdType type, AdState state, User user) {
 		super();
+		AdID = adID;
 		this.price = price;
+		this.surface = surface;
 		Location = location;
 		this.nbRoom = nbRoom;
 		this.nbBath = nbBath;
@@ -261,11 +257,11 @@ public class ad implements Serializable{
 		this.airConditioner = airConditioner;
 		this.furnished = furnished;
 		this.parcking = parcking;
-		this.state = state;
 		this.date = date;
 		this.type = type;
+		this.state = state;
+		this.user = user;
 	}
-
 
 
 	public ad() {
