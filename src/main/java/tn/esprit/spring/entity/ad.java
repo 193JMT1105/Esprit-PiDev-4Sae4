@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import javassist.SerialVersionUID;
 
@@ -22,32 +23,64 @@ public class ad implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int AdID;
 	private double price;
+	private double surface;
 	private String Location;
 	private int nbRoom;
 	private int nbBath;
 	private int terrace;
 	private String description;
+	private String image;
+	private String vd;
 	private boolean pool;
 	private boolean elevator;
-	private boolean airConditioner;
+	private int airConditioner;
     private boolean furnished;
 	private boolean parcking;
-	private boolean state;
 	private Date date;
 	@Enumerated(EnumType.STRING)
 	private AdType type;
+	@Enumerated(EnumType.STRING)
+	private AdState state;
 	
-	
+	@ManyToOne
+	private User user;
 	public int getAdID() {
 		return AdID;
 	}
 
 
-
-	public void setAdID(int adID) {
-		AdID = adID;
+	public double getSurface() {
+		return price;
 	}
 
+
+
+	public void setSurface(double s) {
+		this.price = s;
+	}
+
+	
+
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public String getVd() {
+		return vd;
+	}
+
+
+	public void setVd(String vd) {
+		this.vd = vd;
+	}
 
 
 	public double getPrice() {
@@ -146,13 +179,13 @@ public class ad implements Serializable{
 
 
 
-	public boolean isAirConditioner() {
+	public int isAirConditioner() {
 		return airConditioner;
 	}
 
 
 
-	public void setAirConditioner(boolean airConditioner) {
+	public void setAirConditioner(int airConditioner) {
 		this.airConditioner = airConditioner;
 	}
 
@@ -182,16 +215,17 @@ public class ad implements Serializable{
 
 
 
-	public boolean isState() {
+	
+
+
+	public AdState getState() {
 		return state;
 	}
 
 
-
-	public void setState(boolean state) {
+	public void setState(AdState state) {
 		this.state = state;
 	}
-
 
 
 	public Date getDate() {
@@ -206,18 +240,16 @@ public class ad implements Serializable{
 
 
 
-	public ad(double p, String location,String desc,Date d,int nbR,int nbB,int terrace,boolean pool,boolean elevator,boolean airC,boolean funished,boolean parcking,boolean s)
-	{
-		
-	}
+	
+
+	
 
 
 
-	public ad(int adID, double price, String location, int nbRoom, int nbBath, int terrace, String description,
-			boolean pool, boolean elevator, boolean airConditioner, boolean furnished, boolean parcking, boolean state,
-			Date date) {
+	public ad(double price, String location, int nbRoom, int nbBath, int terrace, String description, boolean pool,
+			boolean elevator, int airConditioner, boolean furnished, boolean parcking, AdState state, Date date,
+			AdType type) {
 		super();
-		AdID = adID;
 		this.price = price;
 		Location = location;
 		this.nbRoom = nbRoom;
@@ -231,7 +263,26 @@ public class ad implements Serializable{
 		this.parcking = parcking;
 		this.state = state;
 		this.date = date;
+		this.type = type;
 	}
+
+
+
+	public ad() {
+		super();
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "ad [AdID=" + AdID + ", price=" + price + ", Location=" + Location + ", nbRoom=" + nbRoom + ", nbBath="
+				+ nbBath + ", terrace=" + terrace + ", description=" + description + ", pool=" + pool + ", elevator="
+				+ elevator + ", airConditioner=" + airConditioner + ", furnished=" + furnished + ", parcking="
+				+ parcking + ", state=" + state + ", date=" + date + ", type=" + type + "]";
+	}
+	
+	
 	
 	
 	
